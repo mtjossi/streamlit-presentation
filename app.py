@@ -47,17 +47,18 @@ if page_dict[page_selection] == 'P1':
 
 if page_dict[page_selection] == 'P2':
     ticker = st.text_input("Please enter a ticker: (e.g. TSLA)")
-    st.write(f"{ticker} info")
+    if ticker:
+        st.write(f"{ticker} info")
 
-    info = yf.Ticker(ticker)
-    st.write('Easily display dataframes, dictionaries, images etc.')
-    st.image(info.info['logo_url'])
-    st.write(f"{ticker} balance sheet")
-    st.write(info.balance_sheet)
-    st.write(f"{ticker} financials")
-    st.write(info.financials)
-    st.write(f"{ticker} info")
-    st.write(info.info)
+        info = yf.Ticker(ticker)
+        st.write('Easily display dataframes, dictionaries, images etc.')
+        st.image(info.info['logo_url'])
+        st.write(f"{ticker} balance sheet")
+        st.write(info.balance_sheet)
+        st.write(f"{ticker} financials")
+        st.write(info.financials)
+        st.write(f"{ticker} info")
+        st.write(info.info)
 
 if page_dict[page_selection] == 'P3':
 
@@ -92,5 +93,3 @@ if page_dict[page_selection] == 'P3':
         mat = confusion_matrix(y_test, y_pred)
         fig, ax = plot_confusion_matrix(mat, show_normed=True)
         st.pyplot(fig)
-
-

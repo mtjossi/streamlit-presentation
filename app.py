@@ -4,7 +4,6 @@ import yfinance as yf
 import plotly.express as px
 import datetime as dt
 import pandas as pd
-import seaborn as sns
 from mlxtend.plotting import plot_confusion_matrix
 
 from sklearn import datasets
